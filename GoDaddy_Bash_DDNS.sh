@@ -22,7 +22,7 @@ headers="Authorization: sso-key $key:$secret"
 # echo $headers
 
 result=$(curl -s -X GET -H "$headers" \
- "https://api.godaddy.com/v1/domains/$domain/records/A/$name")
+ "https://api.godaddy.com/v1/domains/$domain/records/A/")
 
 dnsIp=$(echo $result | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b")
 # echo "dnsIp:" $dnsIp
